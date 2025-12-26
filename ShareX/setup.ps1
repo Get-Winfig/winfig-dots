@@ -476,6 +476,87 @@ function Test-GitInstalled {
     }
 }
 
+# ---------------------------------------------------------------------------- #
+#  ShareX Setup Function
+function SetupShareX {
+    try {
+        $Application    = [System.IO.Path]::Combine($Global:WinfigPaths.Templates, "ShareX", "ApplicationConfig.json")
+        $Hotkeys        = [System.IO.Path]::Combine($Global:WinfigPaths.Templates, "ShareX", "HotkeysConfig.json")
+        $Upload         = [System.IO.Path]::Combine($Global:WinfigPaths.Templates, "ShareX", "UploadersConfig.json")
+        $ImageEffects   = [System.IO.Path]::Combine($Global:WinfigPaths.Templates, "ShareX", "ImageEffects")
+        $Themes         = [System.IO.Path]::Combine($Global:WinfigPaths.Templates, "ShareX", "themes")
+        $backup         = [System.IO.Path]::Combine($Global:WinfigPaths.Templates, "ShareX", "ShareX-backup.sxb")
+        $target         = [System.IO.Path]::Combine($Global:WinfigPaths.Documents, "ShareX")
+        $shareXExe      = [System.IO.Path]::Combine($env:ProgramFiles, "ShareX", "ShareX.exe")
+
+        $files = @{
+            "ApplicationConfig.json" = $Application
+            "HotkeysConfig.json"     = $Hotkeys
+            "UploadersConfig.json"   = $Upload
+            "ImageEffects"           = $ImageEffects
+            "themes"                 = $Themes
+        }
+
+        foreach ($name in $files.Keys) {
+            $src = $files[$name]
+            $dst = Join-Path $target $name
+
+            # Remove existing file or directory or symlink if present
+            if (Test-Path $dst) {
+                try {
+                    if (Test-Path $dst -PathType Container) {
+                        Remove-Item $dst -Force -Recurse
+                    } else {
+                        Remove-Item $dst -Force
+                    }
+                    Log-Message -Message "Removed existing ${dst}" -Level "INFO"
+                } catch {
+                    Show-WarningMessage "Could not remove $dst. It may be in use. Skipping link."
+                    Log-Message -Message "Could not remove ${dst}: $($_.Exception.Message)" -Level "WARN"
+                    continue
+                }
+            }
+
+            # Copy file or directory (instead of symlink)
+            try {
+                if (Test-Path $src -PathType Container) {
+                    Copy-Item $src $dst -Recurse -Force
+                } else {
+                    Copy-Item $src $dst -Force
+                }
+                Show-SuccessMessage "Copied $name to $dst"
+                Log-Message -Message "Copied $src to $dst" -Level "SUCCESS"
+            } catch {
+                Show-WarningMessage "Could not copy ${name}: $($_.Exception.Message)"
+                Log-Message -Message "Could not copy ${name}: $($_.Exception.Message)" -Level "WARN"
+            }
+        }
+
+        # --- Import ShareX backup automatically if present ---
+        try {
+            if ((Test-Path $backup) -and (Test-Path $shareXExe)) {
+                # Kill ShareX if running
+                Get-Process ShareX -ErrorAction SilentlyContinue | Stop-Process -Force
+                Start-Sleep -Seconds 2
+                Show-InfoMessage "Importing ShareX backup..."
+                Log-Message -Message "Importing ShareX backup from $backup" -Level "INFO"
+                Start-Process -FilePath $shareXExe -ArgumentList "-importbackup `"$backup`"" -NoNewWindow
+                Show-SuccessMessage "ShareX backup imported."
+                Log-Message -Message "ShareX backup imported." -Level "SUCCESS"
+            } else {
+                Show-WarningMessage "ShareX backup or ShareX executable not found. Skipping import."
+                Log-Message -Message "ShareX backup or ShareX executable not found. Skipping import." -Level "WARN"
+            }
+        } catch {
+            Show-ErrorMessage "Failed to import ShareX backup: $($_.Exception.Message)"
+            Log-Message -Message "Failed to import ShareX backup: $($_.Exception.Message)" -Level "ERROR"
+        }
+    } catch {
+        Show-ErrorMessage "Failed to setup ShareX configuration: $($_.Exception.Message)"
+        Log-Message -Message "Failed to setup ShareX configuration: $($_.Exception.Message)" -Level "ERROR"
+    }
+}
+
 # ====================================================================== #
 #  Main Script Execution
 # ====================================================================== #
@@ -536,6 +617,14 @@ if (-not (Test-Path -Path $repoPath)) {
         exit 1
     }
 }
+
+Write-Host ""
+Prompt-UserContinue
+
+Winfig-Banner
+Write-SectionHeader -Title "Setup ShareX Configuration"
+
+SetupShareX
 
 Write-Host ""
 Prompt-UserContinue
