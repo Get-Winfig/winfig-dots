@@ -1,0 +1,64 @@
+theme{
+	name = "modern"
+	view = view.small
+	background{
+		color = #eff1f5
+		opacity = 65
+		effect = 2
+	}
+
+	item{
+		opacity = 65
+		prefix = 1
+		text{
+			normal = #4c4f69
+			select = #4c4f69
+			normal-disabled = #6c6f85
+			select-disabled = #6c6f85
+		}
+
+		back{
+			select = #bcc0cc
+			select-disabled = #ccd0da
+		}
+	}
+
+	font{
+		// size = 14
+		name = "Hack Nerd Font"
+		// weight = 2
+		// italic = 0
+	}
+
+	border{
+		enabled = false
+		size = 1
+		color = #1e66f5
+		opacity = 65
+		radius = 2
+	}
+
+	shadow{
+		enabled = true
+		size = 5
+		opacity = 5
+		color = #dce0e8
+	}
+
+	separator{
+		size = 1
+		color = #ccd0da
+	}
+
+	symbol{
+		normal = #1e66f5
+		select = #1e66f5
+		normal-disabled = #6c6f85
+		select-disabled = #6c6f85
+	}
+
+	image{
+		enabled = true
+		color = [#4c4f69, #1e66f5, #eff1f5]
+	}
+}
