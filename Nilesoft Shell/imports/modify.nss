@@ -33,3 +33,13 @@ modify(mode=mode.multiple
 	)
 	pos=1 menu=title.more_options
 )
+
+modify(find="jetbrains" vis=vis.remove)
+modify(find="pycharm" vis=vis.remove)
+modify(find="intellij" vis=vis.remove)
+modify(find="webstorm" vis=vis.remove)
+modify(find="clion" vis=vis.remove)
+modify(find="Warp" vis=vis.remove)
+modify(find="Open with Code" vis=vis.remove)
+modify(find="Open command Prompt here" vis=vis.remove)
+
