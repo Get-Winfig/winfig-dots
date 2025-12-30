@@ -16,7 +16,7 @@ This repository acts as a **Factory** that contains Dotfiles for Winfig.
 - **Cross-Platform**: Compatible with multiple operating systems.
 - **Version Control**: Keep track of changes with Git.
 
-> **📋 Detailed Instructions**: For more advanced configurations and troubleshooting, visit our [documentation](https://get-winfig.github.io/winfig-docs/dots.html).
+> **📋 Detailed Instructions**: For more advanced configurations and troubleshooting, visit our [documentation](https://get-winfig.github.io/winfig-docs/dotfiles/shareX.html).
 ---
 
 ## 🤝 Contributing
