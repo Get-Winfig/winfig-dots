@@ -1,0 +1,312 @@
+############################################################
+# SYSTEM & OS FILES
+############################################################
+
+# Windows system files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+RECYCLER/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+*.imagecache
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+*.icloud
+
+# Linux system files
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+############################################################
+# ENVIRONMENT, LOGS, DATABASES, SECRETS
+############################################################
+
+# Environment variable files
+.env
+*.env.local
+
+# Log and database files
+*.log
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+
+# Secrets & credentials
+.credentials
+.ssh/
+.vault-token
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+
+############################################################
+# DEPENDENCY & PACKAGE MANAGER DIRECTORIES
+############################################################
+
+# Node.js, Yarn, pnpm, Bower, Composer, etc.
+node_modules/
+jspm_packages/
+.bower_components/
+vendor/           # Composer (PHP)
+.npm/
+.pnpm/
+.pnpm-store/
+.pnpmfile.cjs
+.pnpm-lock.yaml
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+############################################################
+# BUILD, DIST, CACHE, AND TEMPORARY DIRECTORIES
+############################################################
+
+# Build output, cache, and temp folders
+.cache/
+temp/
+tmp/
+out/
+build/
+dist/
+public/
+resources/_gen/
+data/cache/
+page-bundles/
+coverage/
+.nyc_output/
+prof/
+report/
+docs/_build/
+_site/
+
+############################################################
+# EDITOR & TOOLING FILES
+############################################################
+
+# VSCode settings (except for shared configs)
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+_ReSharper.*/
+*.sublime-project
+*.sublime-workspace
+.atom/
+
+# Vim/Emacs/Other editor files
+[._]*.s[a-v][a-z]
+!*.svg
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+Session.vim
+Sessionx.vim
+.netrwhist
+tags
+[._]*.un~
+*~
+\#*
+*#
+.\#*
+*.swp
+*.bak
+
+############################################################
+# LANGUAGE & FRAMEWORK BUILD OUTPUTS
+############################################################
+
+# Python
+__pycache__/
+*.py[cod]$
+*$py.class
+*.so
+.Python
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+pip-log.txt
+pip-delete-this-directory.txt
+pip-log.*
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.venv/
+*venv/
+*/venv/
+
+# Go
+*.exe
+*.test
+*.prof
+$GOPATH/pkg/
+!$GOPATH/pkg/mod/
+*.out
+
+# Rust / Cargo
+/target/
+**/*.rlib
+**/*.d
+/Cargo.lock
+
+# Java / JVM (Maven & Gradle)
+*.class
+*.jar
+*.war
+*.ear
+/target/
+build/
+bin/
+.gradle/
+local.properties
+captures/
+.cxx/
+
+# Haskell
+.stack-work/
+
+# C/C++ Compilation Artifacts
+*.obj
+*.o
+*.pch
+*.lib
+*.exp
+*.ilk
+
+# Embedded/Firmware Outputs
+*.hex
+*.elf
+*.bin
+
+# Cmake/Make
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+build/
+Makefile.in
+
+############################################################
+# PHP
+############################################################
+
+# Composer dependencies and autoload
+/vendor/
+composer.lock
+
+# PHPUnit test results
+.phpunit.result.cache
+
+# PHPStorm project files
+/.idea/
+
+# PHP error logs
+php_errors.log
+
+############################################################
+# BASH & SHELL
+############################################################
+
+# Bash history and environment
+.bash_history
+.bash_logout
+.bash_profile
+.bashrc
+
+# Zsh history and environment
+.zsh_history
+.zshrc
+.zprofile
+.zlogin
+.zlogout
+
+# Shell session files
+sh_history
+
+############################################################
+# POWERSHELL
+############################################################
+
+# PowerShell history
+PSReadLineHistory.txt
+
+# PowerShell cache and temp
+*.ps1xml
+*.psc1
+*.psd1
+*.psm1
+
+############################################################
+# WEB / FRONTEND
+############################################################
+
+# JS/TS build artifacts
+*.tsbuildinfo
+*.map
+
+# SASS cache
+*.sass-cache/
+
+############################################################
+# INFRASTRUCTURE AS CODE
+############################################################
+
+# Terraform
+.terraform/
+*.tfplan
+*.tfstate
+*.tfstate.backup

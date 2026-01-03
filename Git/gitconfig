@@ -1,0 +1,175 @@
+
+# ===============================
+# USER & IDENTITY
+# ===============================
+[user]
+    name = Get-Winfig
+    email = Get-Winfig@noreply.github.com
+    signingkey = <USER-GPG-KEY-ID>
+
+# ===============================
+# INITIALIZATION & THEMING
+# ===============================
+[init]
+    defaultBranch = main
+
+[include]
+    path = ~/.catppuchin.gitconfig
+
+# ===============================
+# DIFF & DELTA CONFIGURATION
+# ===============================
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = catppuccin-macchiato
+    navigate = true
+    side-by-side = true
+    line-numbers = true
+    syntax-theme = catppuccin-frappe
+    dark = true
+
+# ===============================
+# MERGE & DIFF SETTINGS
+# ===============================
+[merge]
+    conflictstyle = diff3
+    tool = vscode
+
+[mergetool "vscode"]
+    cmd = code --wait --merge "$REMOTE" "$LOCAL" "$BASE" "$MERGED"
+    keepBackup = false
+    trustExitCode = true
+
+[diff]
+    colorMoved = default
+    tool = delta
+    mnemonicprefix = true
+
+# ===============================
+# CORE & FILE SETTINGS
+# ===============================
+[core]
+    editor = code --wait
+    pager = delta
+    autocrlf = input
+    excludesfile = ~/.gitignore_global
+    whitespace = trailing-space,space-before-tab
+    longpaths = true
+    filemode = false
+
+# ===============================
+# GIT LFS (Large File Storage)
+# ===============================
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
+# ===============================
+# COLOR & UI SETTINGS
+# ===============================
+[color]
+    ui = auto
+    branch = auto
+    diff = auto
+    status = auto
+
+# ===============================
+# BRANCH, PULL, PUSH, REBASE
+# ===============================
+[pull]
+    rebase = false
+
+[push]
+    default = simple
+    followTags = false
+
+[rebase]
+    autoStash = true
+
+# ===============================
+# CREDENTIALS
+# ===============================
+[credential]
+    helper = manager-core
+
+# ===============================
+# LOG & FORMAT
+# ===============================
+[log]
+    date = iso
+    decorate = short
+
+[format]
+    pretty = format:%C(bold blue)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)
+
+# ===============================
+# DIFF TOOL INTEGRATION
+# ===============================
+[diff "tool"]
+    prompt = false
+
+[difftool]
+    prompt = false
+
+[difftool "delta"]
+    cmd = delta --color-only
+
+# ===============================
+# PAGER SETTINGS
+# ===============================
+[pager]
+    log = delta
+    diff = delta
+    reflog = delta
+    show = delta
+
+# ===============================
+# STATUS SETTINGS
+# ===============================
+[status]
+    showUntrackedFiles = all
+    short = false
+
+# ===============================
+# FETCH & PRUNE
+# ===============================
+[fetch]
+    prune = true
+
+# ===============================
+# TAG MANAGEMENT
+# ===============================
+[tag]
+    sort = version:refname
+
+# ===============================
+# RERERE (Reuse recorded resolution)
+# ===============================
+[rerere]
+    enabled = true
+
+# ===============================
+# COMMIT TEMPLATE & SIGNING
+# ===============================
+[commit]
+    template = ~/.gitmessage.txt
+    verbose = true
+    gpgSign = true
+    autoEdit = false
+
+# ===============================
+# HTTP & GREP & Shortcut
+# ===============================
+[http]
+    sslVerify = true
+
+[grep]
+    lineNumber = true
+    patternType = extended
+
+[url "https://github.com/"]
+    insteadOf = github:
