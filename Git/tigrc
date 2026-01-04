@@ -1,0 +1,98 @@
+set blame-view	= id:yes,color file-name:auto author:full committer:no date:default,format="%Y-%m-%d" line-number:yes,interval=1 text
+set grep-view	= file-name:no line-number:yes,interval=1 text
+set main-view	= line-number:no,interval=5 id:no date:default,format="%Y-%m-%d" author:full committer:no commit-title:yes,graph,refs,overflow=no
+set reflog-view	= line-number:no,interval=5 id:yes date:no,format="%Y-%m-%d" author:no committer:no commit-title:yes,refs,overflow=no
+set refs-view	= line-number:no id:no date:default,format="%Y-%m-%d" author:full committer:no ref commit-title
+set stash-view	= line-number:no,interval=5 id:no date:default,format="%Y-%m-%d" author:full commit-title
+set status-view	= line-number:no,interval=5 status:short file-name
+set tree-view	= line-number:no,interval=5 mode author:full committer:no file-size date:default,format="%Y-%m-%d" id:no file-name
+
+# Pager based views
+set pager-view	= line-number:no,interval=5 text
+set stage-view	= line-number:no,interval=5 text
+set log-view	= line-number:no,interval=5 text
+set blob-view	= line-number:no,interval=5 text
+set diff-view	= line-number:no,interval=5 text:yes,commit-title-overflow=no
+
+# UI display settings
+set show-changes		    = yes
+set show-untracked		    = yes
+set wrap-lines			    = no
+set tab-size			    = 8
+set truncation-delimiter	= ~
+set line-graphics		    = default
+set reference-format		= [branch] <tag> {remote} ~replace~
+
+# Settings controlling how content is read from Git
+set commit-order		= auto
+set status-show-untracked-dirs	= yes
+set status-show-untracked-files	= yes
+set ignore-space		= no
+set show-notes			= yes
+set word-diff			= yes
+set diff-indicator		= yes
+set log-options			= --cc --stat
+set mailmap			    = yes
+
+# Misc
+set start-on-head		    = no
+set refresh-mode		    = auto
+set refresh-interval	    = 10
+set ignore-case			    = no
+set wrap-search			    = yes
+set focus-child			    = yes
+set send-child-enter		= yes
+set horizontal-scroll		= 50%
+set split-view-height		= 67%
+set vertical-split		    = auto
+set split-view-width		= 50%
+set editor-line-number		= yes
+set history-size		    = 500
+set mouse                   = yes
+set mouse-scroll		    = 3
+set mouse-wheel-cursor		= no
+set pgrp			        = no
+set pager-autoscroll		= no
+
+
+color default        252 235
+color cursor         225 235 reverse
+color status         225 235
+color status.header  229 235
+color title-focus    225 235
+color title-blur     243 235
+color header         225 235
+color section        75  235
+color id             75  235
+color date           215 235
+color author         183 235
+color mode           151 235
+color overflow       210 235
+color directory      75  235
+color file           252 235
+color file-size      229 235
+color delimiter      243 235
+color line-number    243 235
+color graph-commit   75  235
+color palette-0      225 235
+color palette-1      215 235
+color palette-2      151 235
+color palette-3      75  235
+color palette-4      210 235
+color palette-5      229 235
+color palette-6      183 235
+color palette-7      243 235
+color stat-staged    151 235
+color stat-unstaged  215 235
+color stat-untracked 225 235
+color help-group     75  235
+color help-action    215 235
+color diff-header    225 235
+color diff-index     243 235
+color diff-chunk     215 235
+color diff-add       151 235
+color diff-del       210 235
+color diff-stat      75  235
+color search-result  235 225
+color diff-add-highlight 151 235 standout
+color diff-del-highlight 210 235 standout

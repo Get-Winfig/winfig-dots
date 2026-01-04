@@ -630,6 +630,7 @@ function SetupGitConfig {
     try {
         $Config    = [System.IO.Path]::Combine($Global:WinfigPaths.Templates, "Git", "gitconfig")
         $Ignore    = [System.IO.Path]::Combine($Global:WinfigPaths.Templates, "Git", "gitignore")
+        $Tigrc    = [System.IO.Path]::Combine($Global:WinfigPaths.Templates, "Git", "tigrc")
         $Theme    = [System.IO.Path]::Combine($Global:WinfigPaths.Templates, "Git", "catppuchin.gitconfig")
         $Message   = [System.IO.Path]::Combine($Global:WinfigPaths.Templates, "Git", "gitmessage.txt")
         $target    = $Global:WinfigPaths.UserProfile
@@ -638,6 +639,7 @@ function SetupGitConfig {
 
             ".gitconfig" = $Config
             ".gitignore" = $Ignore
+            ".tigrc" = $Tigrc
             ".catppuchin.gitconfig" = $Theme
             ".gitmessage.txt" = $Message
         }
