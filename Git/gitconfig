@@ -1,11 +1,14 @@
 
 # ===============================
-# USER & IDENTITY
+# USER & IDENTITY & GPG Path
 # ===============================
 [user]
     name = Get-Winfig
     email = Get-Winfig@noreply.github.com
     signingkey = <USER-GPG-KEY-ID>
+
+[gpg]
+	program = <GPG-Path>
 
 # ===============================
 # INITIALIZATION & THEMING
@@ -24,10 +27,10 @@
 
 [delta]
     features = catppuccin-macchiato
+    syntax-theme = catppuccin-frappe
     navigate = true
     side-by-side = true
     line-numbers = true
-    syntax-theme = catppuccin-frappe
     dark = true
 
 # ===============================
@@ -104,7 +107,7 @@
     decorate = short
 
 [format]
-    pretty = format:%C(bold blue)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)
+    pretty = format:%C(bold cyan)⎇ %h%C(reset) %C(green)[%ar]%C(reset)%n%C(bold white)  %s%C(reset)%n  %C(dim)┌─ Author:    %C(bold blue)%an%C(reset)%n  %C(cyan)├─ Date:      %ad%C(reset)%n  %C(yellow)├─ Committer: %cn <%ce>%C(reset)%n  %C(magenta)├─ Tree:      %t%C(reset)%n  %C(blue)├─ Parent:    %p%C(reset)%n  %C(yellow)├─ GPG:       %C(bold green)%GS%C(reset)%n  %C(cyan)├─ Key:       %GK%C(reset)%n  %C(magenta)└─ Refs:      %C(auto)%d%C(reset)%n
 
 # ===============================
 # DIFF TOOL INTEGRATION
