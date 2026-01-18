@@ -25,7 +25,7 @@ function server {
             "python" = { param($path, $port) python -m http.server $port --directory $path }
             "uv"     = { param($path, $port) uv run python -m http.server $port --directory $path }
             "php"    = { param($path, $port) php -S localhost:$port -t $path }
-            "mkdocs" = { param($path, $port) mkdocs serve -a localhost:$port --site-dir $path --dirtyreload --livereload }
+            "mkdocs" = { param() uv run mkdocs serve --dirtyreload --livereload }
         }
     }
 
@@ -53,11 +53,11 @@ function server {
             return
         }
 
-        Write-Host "`n Starting $Service server..." -ForegroundColor Cyan
+        Write-Host "Starting $Service server..." -ForegroundColor Cyan
         Write-Host "Path: $resolvedPath" -ForegroundColor Gray
         Write-Host "Port: $Port" -ForegroundColor Gray
         Write-Host "URL: http://localhost:$Port" -ForegroundColor Green
-        Write-Host "Press Ctrl+C to stop the server`n" -ForegroundColor Yellow
+        Write-Host "Press Ctrl+C to stop the server" -ForegroundColor Yellow
 
         # Execute the service command
         try {

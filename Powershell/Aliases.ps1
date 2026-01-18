@@ -106,7 +106,7 @@ function recent { Get-ChildItem -Recurse | Sort-Object LastAccessTime -Descendin
 # Kill a process by name
 function pkill($name) { Get-Process $name -ErrorAction SilentlyContinue | Stop-Process }
 # Clear the console
-function clr { Clear-Host }
+function cls { Clear-Host }
 # Reload PowerShell profile
 function reload { . $PROFILE }
 # Edit PowerShell profile

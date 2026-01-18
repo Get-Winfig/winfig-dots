@@ -87,5 +87,3 @@ function networkinfo {
         }
     }
 }
-
-networkinfo

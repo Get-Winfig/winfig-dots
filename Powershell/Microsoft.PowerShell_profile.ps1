@@ -26,3 +26,19 @@ Get-ChildItem -Path "$Path/Functions" -Filter *.ps1 | ForEach-Object {
 if (Test-Path "$PSScriptRoot\Secrets.ps1") {
     . "$PSScriptRoot\Secrets.ps1"
 }
+
+# Run onefetch if in a git repository and available, otherwise run fastfetch if available
+if (Get-Command onefetch -ErrorAction SilentlyContinue) {
+    try {
+        git rev-parse --is-inside-work-tree > $null 2>&1
+        if ($LASTEXITCODE -eq 0) {
+            onefetch
+            return
+        }
+    } catch {
+        # Not a git repository, do nothing
+    }
+}
+if (Get-Command fastfetch -ErrorAction SilentlyContinue) {
+    fastfetch
+}
