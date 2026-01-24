@@ -1,0 +1,104 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.28/schema.json",
+  "app_specific_configuration_path": "$Env:KOMOREBI_CONFIG_HOME/applications.json",
+  "animation": {
+    "duration": 400,
+    "enabled": true,
+    "style": "EaseInCubic",
+    "fps": 144
+  },
+  "border": true,
+  "border_colours": {
+    "single": "#cba6f7",
+    "stack": "#89b4fa",
+    "monocle": "#f38ba8",
+    "unfocused": "#7f849c"
+  },
+  "border_implementation": "Komorebi",
+  "border_offset": 0,
+  "border_style": "Rounded",
+  "border_width": 4,
+  "cross_monitor_move_behaviour": "Insert",
+  "default_container_padding": 0,
+  "default_workspace_padding": 0,
+  "float_override": false,
+  "global_work_area_offset": {
+    "right": 0,
+    "top": 0,
+    "bottom": 0,
+    "left": 0
+  },
+  "mouse_follows_focus": true,
+  "stackbar": {
+    "tabs": {
+      "width": 0,
+      "font_family": "JetBrainsMono Nerd Font",
+      "focused_text": "#ffffff",
+      "font_size": 12,
+      "background": "#ffffff",
+      "unfocused_text": "#ffffff"
+    },
+    "height": 10,
+    "label": "Process",
+    "mode": "Always"
+  },
+  "transparency": true,
+  "transparency_alpha": 180,
+  "unmanaged_window_operation_behaviour": "Op",
+  "window_container_behaviour": "Append",
+  "window_hiding_behaviour": "Cloak",
+  "monitors": [
+    {
+      "workspaces": [
+        { "name": "I", "layout": "BSP" },
+        {
+          "name": "II",
+          "workspace_rules" : [
+            { "kind": "Exe", "id": "WindowsTerminal.exe"},
+            { "kind": "Exe", "id": "pwsh.exe"},
+            { "kind": "Exe", "id": "powershell.exe"},
+            { "kind": "Exe", "id": "cmd.exe"}
+            ]
+        },
+        {
+          "name": "III",
+          "layout": "BSP",
+          "workspace_rules" : [
+            { "kind": "Exe", "id": "brave.exe"},
+            { "kind": "Exe", "id": "zen.exe"},
+            { "kind": "Exe", "id": "msedge.exe"}
+            ]
+        },
+        {
+          "name": "IV",
+          "workspace_rules" : [
+            { "kind": "Exe", "id": "Code.exe"},
+            { "kind": "Exe", "id": "sublime_text.exe"},
+            { "kind": "Exe", "id": "Notepad.exe"}
+            ]
+        },
+        {
+          "name": "V",
+          "layout": "BSP",
+          "workspace_rules" : [
+            { "kind": "Exe", "id": "explorer.exe"}
+            ]
+        },
+        {
+          "name": "VI",
+          "layout": "BSP",
+          "workspace_rules" : [
+            { "kind": "Exe", "id": "discord.exe"},
+            { "kind": "Exe", "id": "notion.exe"},
+            { "kind": "Exe", "id": "telegram.exe"},
+            { "kind": "Exe", "id": "whatsapp.exe"}
+            ]
+        },
+        { "name": "VII", "layout": "BSP" },
+        { "name": "VIII", "layout": "BSP" },
+        { "name": "IX", "layout": "BSP" },
+        { "name": "X", "layout": "BSP" }
+      ]
+    }
+  ]
+}
