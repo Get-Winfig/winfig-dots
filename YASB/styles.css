@@ -1,0 +1,690 @@
+/* -------------------------------------------------------------------------------------------------- */
+/* Variables                                                                                         */
+/* -------------------------------------------------------------------------------------------------- */
+
+:root {
+    /* Catppuccin Mocha colors */
+    --rosewater: rgb(245, 224, 220);
+    --flamingo: rgb(242, 205, 205);
+    --pink: rgb(245, 194, 231);
+    --mauve: rgb(203, 166, 247);
+    --red: rgb(243, 139, 168);
+    --maroon: rgb(235, 160, 172);
+    --peach: rgb(250, 179, 135);
+    --yellow: rgb(249, 226, 175);
+    --green: rgb(166, 227, 161);
+    --teal: rgb(148, 226, 213);
+    --sky: rgb(137, 220, 235);
+    --sapphire: rgb(116, 199, 236);
+    --blue: rgb(137, 180, 250);
+    --lavender: rgb(180, 190, 254);
+    --text: rgb(205, 214, 244);
+    --subtext1: rgb(186, 194, 222);
+    --subtext0: rgb(166, 173, 200);
+    --overlay2: rgb(147, 153, 178);
+    --overlay1: rgb(127, 132, 156);
+    --overlay0: rgb(108, 112, 134);
+    --surface2: rgb(88, 91, 112);
+    --surface1: rgb(69, 71, 90);
+    --surface0: rgb(40, 41, 54);
+    --base: rgb(30, 30, 46);
+    --mantle: rgb(24, 24, 37);
+    --crust: rgb(17, 17, 27);
+
+    /* Frequently used colors */
+    --white: rgba(255, 255, 255, 1);
+    --white-95: rgba(255, 255, 255, 0.95);
+    --white-25: rgba(255, 255, 255, 0.25);
+    --white-15: rgba(255, 255, 255, 0.15);
+    --white-10: rgba(255, 255, 255, 0.10);
+    --white-085: rgba(255, 255, 255, 0.085);
+    --white-06: rgba(255, 255, 255, 0.06);
+    --white-05: rgba(255, 255, 255, 0.05);
+    --white-1: rgba(255, 255, 255, 0.1);
+    --white-062: rgba(255, 255, 255, 0.062);
+    --white-03: rgba(255, 255, 255, 0.03);
+    --black-18: rgba(0, 0, 0, 0.18);
+    --black-10: rgba(0, 0, 0, 0.10);
+
+    /* Component colors */
+    --button-red: rgba(243, 139, 168, 0.95);
+    --button-red-icon: rgba(243, 139, 168, 0.55);
+    --button-blue: rgba(137, 180, 250, 0.95);
+    --button-blue-icon: rgba(137, 180, 250, 0.55);
+
+    /* Background colors */
+    --base-25: rgba(30, 30, 46, 0.25);
+    --base-65: rgba(30, 30, 46, 0.65);
+    --base-85: rgba(41, 42, 58, 0.85);
+    --surface0-70: rgba(40, 41, 54, 0.7);
+    --surface0-25: rgba(40, 41, 54, 0.25);
+    --crust-4: rgba(17, 17, 27, 0.4);
+    --crust-6: rgba(17, 17, 27, 0.6);
+    --crust-8: rgba(17, 17, 27, 0.8);
+    --mantle-9: rgba(24, 24, 37, 0.9);
+    --mantle-92: rgba(24, 24, 37, 0.92);
+    --mauve-10: rgba(203, 166, 247, 0.10);
+
+    /* Border colors */
+    --acrylic-border: rgba(203, 166, 247, 0.18);
+    --border-white-15: rgba(255, 255, 255, 0.15);
+
+    /* Effects */
+    --acrylic-blur: blur(70px) saturate(1.5);
+    --acrylic-bg: var(--base-65);
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+/* Layout and Containers                                                                              */
+/* -------------------------------------------------------------------------------------------------- */
+
+* {
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 900;
+    font-family: "JetBrainsMono NFP";
+    margin: 0;
+    padding: 0;
+}
+
+.yasb-bar {
+    padding: 0 8px;
+    margin: 0;
+    background: var(--acrylic-bg);
+    border-radius: 15px;
+    box-shadow: 0 4px 32px 0 var(--black-18);
+    -webkit-backdrop-filter: var(--acrylic-blur);
+    backdrop-filter: var(--acrylic-blur);
+    border: 1.5px solid var(--acrylic-border);
+    transition: background 0.3s, box-shadow 0.3s;
+    background-color: var(--base-25);
+}
+
+.widget {
+    padding: 0 10px;
+    margin: 8px 4px;
+    border-radius: 10px;
+    background: var(--surface0-70);
+    box-shadow: 0 2px 8px 0 var(--black-10);
+    border: 1px solid var(--acrylic-border);
+    transition: background 0.3s, box-shadow 0.3s;
+    -webkit-backdrop-filter: var(--acrylic-blur);
+    backdrop-filter: var(--acrylic-blur);
+    background-color: var(--surface0-25);
+}
+
+.widget .label {
+    padding: 2px 2px 1px 2px;
+    color: var(--text);
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(24,24,37,0.18);
+}
+
+.widget .label.alt {
+    padding: 1px 8px 1px 8px;
+    color: var(--mauve);
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+/* Icons & Typography                                                                                 */
+/* -------------------------------------------------------------------------------------------------- */
+
+
+.power-menu-popup {
+    background: var(--mantle-92);
+    border-radius: 12px;
+    border: 2px solid var(--acrylic-border);
+    -webkit-backdrop-filter: var(--acrylic-blur);
+    backdrop-filter: var(--acrylic-blur);
+    box-shadow: 0 4px 32px 0 var(--black-18);
+}
+
+.power-menu-widget .label {
+    color: var(--maroon);
+    font-size: 14px;
+    padding: 0;
+}
+
+.power-menu-popup .button {
+    padding: 0;
+    width: 220px;
+    height: 110px;
+    border-radius: 10px;
+    background: var(--base-85);
+    color: var(--white);
+    border: 1.5px solid var(--acrylic-border);
+    margin: 8px;
+    transition: background 0.2s, border 0.2s;
+}
+
+.power-menu-popup .button:hover {
+    background: var(--mauve-10);
+    border: 2px solid var(--mauve);
+}
+
+.power-menu-popup .button .label {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white-95);
+}
+
+.power-menu-popup .button .icon {
+    font-size: 48px;
+    padding-top: 8px;
+    color: var(--white-25);
+}
+
+.power-menu-popup .button.cancel .icon {
+    color: var(--button-red-icon);
+}
+
+.power-menu-popup .button.cancel .label {
+    color: var(--button-red);
+}
+
+.power-menu-popup .button.shutdown .icon {
+    color: var(--button-blue-icon);
+}
+
+.power-menu-popup .button.shutdown .label {
+    color: var(--button-blue);
+}
+/* -------------------------------------------------------------------------------------------------- */
+/* Komorebi Workspaces                                                                              */
+/* -------------------------------------------------------------------------------------------------- */
+
+.komorebi-workspaces .offline-status {
+    color: var(--red);
+    font-size: 12px;
+    padding: 0 0 0 4px;
+    font-weight: 600;
+}
+
+.komorebi-workspaces .ws-btn {
+    border: none;
+    margin: 0;
+    font-size: 14px;
+    color: var(--lavender);
+    height: 28px;
+    width: 18px;
+}
+
+.komorebi-workspaces .ws-btn:hover {
+    color: var(--teal);
+}
+
+.komorebi-workspaces .ws-btn.populated {
+    color: var(--mauve);
+}
+
+.komorebi-workspaces .ws-btn.active {
+    color: var(--pink);
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+/* Komorebi Active Layout                                                                             */
+/* -------------------------------------------------------------------------------------------------- */
+
+
+.komorebi-layout-menu {
+    background-color: var(--crust-4);
+}
+
+.komorebi-layout-menu .menu-item {
+    padding: 8px 16px;
+    font-size: 12px;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.komorebi-layout-menu .menu-item-icon {
+    color: var(--text);
+    font-size: 16px;
+}
+
+.komorebi-layout-menu .menu-item-text {
+    font-family: 'Segoe UI';
+    padding-left:4px;
+    font-size: 12px;
+}
+
+.komorebi-layout-menu .menu-item:hover {
+    background-color: rgba(128, 130, 158, 0.15);
+    color: var(--white);
+}
+
+.komorebi-layout-menu .separator {
+    max-height: 1px;
+    background-color: var(--border-white-15);
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+/* Power Menu Widget                                                                                  */
+/* -------------------------------------------------------------------------------------------------- */
+
+.power-menu-popup {
+    background: var(--crust);
+    border-radius: 8px;
+    -webkit-backdrop-filter: var(--acrylic-blur);
+    backdrop-filter: var(--acrylic-blur);
+    box-shadow: 0 4px 32px 0 var(--black-18);
+    border: 1.5px solid var(--acrylic-border);
+    background-color: var(--mantle-9);
+}
+
+.power-menu-widget .label {
+    color: var(--maroon);
+    font-size: 16px;
+    padding: 0;
+}
+
+.power-menu-popup .button {
+    padding: 0px;
+    margin: 5px;
+    width: 260px;
+    height: 180px;
+    border-radius: 9px;
+    background-color: var(--base);
+    color: var(--white);
+}
+
+.power-menu-popup .button.hover {
+    background-color: var(--surface1);
+}
+
+.power-menu-popup .button .label {
+    margin-bottom: 0px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.power-menu-popup .button .icon {
+    font-size: 55px;
+    padding-top: 25px;
+    padding-right: 10px;
+    color: var(--text);
+}
+
+.power-menu-popup .button.cancel .icon {
+    color: var(--red);
+}
+
+.power-menu-popup .button.cancel .label {
+    color: var(--red);
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+/* Calendar                                                                                           */
+/* -------------------------------------------------------------------------------------------------- */
+
+.calendar {
+    background-color: var(--mantle);
+}
+
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+    background-color: transparent;
+    color: var(--overlay1);
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+.calendar .calendar-table::item:selected {
+    color: #4c4f69;
+    background: var(--mauve);
+    border-radius: 8px;
+}
+
+.calendar .day-label {
+    margin-top: 20px;
+}
+
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
+    font-size: 16px;
+    color: var(--text);
+    font-weight: 700;
+    min-width: 180px;
+    max-width: 180px;
+}
+
+.calendar .month-label {
+    font-weight: normal;
+    padding-bottom: 12px;
+}
+
+.calendar .date-label {
+    font-size: 88px;
+    font-weight: 900;
+    color: var(--text);
+    margin-top: -20px;
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+/* Home Menu                                                                                          */
+/* -------------------------------------------------------------------------------------------------- */
+
+.home-menu {
+    background-color: var(--mantle);
+    border-radius: 8px;
+    padding: 0;
+    margin-left: 0px;
+}
+
+.home-menu .menu-item {
+    padding: 8px 48px 8px 12px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.home-menu .menu-item:hover {
+    background-color: var(--mauve);
+    color: #181825;
+    margin: 4px 6px;
+    border-radius: 4px;
+}
+
+.home-menu .separator {
+    max-height: 1px;
+    background-color: var(--surface2);
+    margin: 0 8px;
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+/* Wallpapers Gallery                                                                                 */
+/* -------------------------------------------------------------------------------------------------- */
+
+.wallpapers-gallery-window {
+    background-color: var(--mantle);
+    border: 2px;
+    border-radius: 8px;
+    margin: 0;
+    -webkit-backdrop-filter: var(--acrylic-blur);
+    backdrop-filter: var(--acrylic-blur);
+    box-shadow: 0 4px 32px 0 var(--black-18);
+    border: 1.5px solid var(--acrylic-border);
+}
+
+.wallpapers-gallery-buttons {
+    background-color: var(--base);
+    color: var(--text);
+    border: none;
+    font-size: 16px;
+    padding: 8px 0px;
+    border-radius: 8px;
+    margin: 8px 8px 8px 8px;
+    width: 600px;
+}
+
+.wallpapers-widget {
+    padding: 0 6px 0 6px;
+}
+
+.wallpapers-widget .icon {
+    color: var(--mauve);
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+/* Update Check Widget                                                                                */
+/* -------------------------------------------------------------------------------------------------- */
+
+.update-check-widget {
+    padding: 0 0px 0 0px;
+}
+
+.update-check-widget .icon {
+    font-size: 16px;
+    color: var(--mauve);
+}
+
+.update-check-widget .widget-container.winget,
+.update-check-widget .widget-container.windows {
+    margin: 0px 0px 0px 0px;
+    border-radius: 10px;
+    border: 0px solid var(--sapphire);
+}
+
+.update-check-widget .widget-container.winget .icon,
+.update-check-widget .widget-container.windows .icon {
+    color: var(--mauve);
+    margin: 0 2px 0 6px;
+}
+
+.update-check-widget .widget-container.winget .label,
+.update-check-widget .widget-container.windows .label {
+    margin: 0 6px 0 1px;
+    color: var(--mauve);
+    font-weight: 900;
+    font-size: 14px;
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+/* Volume Widget                                                                                      */
+/* -------------------------------------------------------------------------------------------------- */
+
+.volume-widget .icon {
+    color: var(--mauve);
+    margin:0 2px 0 0;
+}
+
+.audio-menu {
+    background-color: var(--crust-4);
+    min-width: 300px;
+}
+
+.audio-menu .system-volume-container .volume-slider {
+    border: none;
+}
+
+.audio-menu .audio-container .device {
+    background-color:transparent;
+    border: none;
+    padding:6px 8px 6px 4px;
+    margin: 2px 0;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.audio-menu .audio-container .device.selected {
+    background-color: var(--white-085);
+}
+
+.audio-menu .audio-container .device:hover {
+    background-color: var(--white-06);
+}
+
+.audio-menu .toggle-apps {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    min-height: 24px;
+    min-width: 24px;
+    border-radius: 4px;
+}
+
+.audio-menu .toggle-apps.expanded {
+    background-color: var(--white-1);
+}
+
+.audio-menu .toggle-apps:hover {
+    background-color: var(--white-15);
+}
+
+.audio-menu .apps-container {
+    padding: 8px;
+    margin-top:20px;
+    border-radius: 8px;
+    background-color: var(--white-062);
+}
+
+.audio-menu .apps-container .app-volume .app-icon-container {
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 6px;
+    margin-right: 8px;
+}
+
+.audio-menu .apps-container .app-volume .app-slider {
+    min-height: 40px;
+    max-height: 40px;
+}
+
+.audio-menu .apps-container .app-volume .app-icon-container:hover {
+    background-color: var(--white-1);
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+/* Wifi Widget                                                                                        */
+/* -------------------------------------------------------------------------------------------------- */
+
+
+.wifi-menu{
+    font-family: 'Hack Nerd Font';
+    background-color: var(--crust-4);
+    max-height: 350px;
+    min-height: 375px;
+    min-width: 375px;
+}
+
+.wifi-menu .progress-bar {
+    max-height: 2px;
+}
+
+.wifi-menu .progress-bar::chunk {
+    background-color: var(--sky);
+}
+
+.wifi-menu .header {
+    font-family: 'Hack Nerd Font';
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    padding: 12px;
+    background-color: var(--crust-6);
+    color: var(--white);
+    border-bottom: 1px solid var(--white-1);
+}
+
+.wifi-menu .error-message {
+    font-family: 'Hack Nerd Font';
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    padding: 12px;
+    background-color: var(--red);
+    color: var(--white);
+    border-bottom: 1px solid var(--white-1);
+}
+
+.wifi-menu .wifi-list {
+    background-color: var(--crust-8);
+    margin-right: 3px;
+}
+
+.wifi-menu .wifi-item {
+    min-height: 35px;
+    padding: 2px 12px;
+    margin: 2px 4px;
+}
+
+.wifi-menu .wifi-item:hover {
+    background-color: var(--white-05);
+    border-radius: 6px;
+}
+
+.wifi-menu .wifi-item[active=true] {
+    background-color: var(--white-15);
+    font-size: 14px;
+    border-radius: 6px;
+    min-height: 80px;
+}
+
+.wifi-menu .wifi-item .icon {
+    font-family: 'Hack Nerd Font';
+    font-size: 26px;
+    margin-right: 10px;
+}
+
+.wifi-menu .wifi-item .name {
+    font-family: 'Hack Nerd Font';
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.wifi-menu .wifi-item .password {
+    font-family: 'Hack Nerd Font';
+    background-color: transparent;
+    font-size: 14px;
+}
+
+.wifi-menu .wifi-item .status {
+    font-family: 'Segoe UI';
+    font-size: 14px;
+}
+
+.wifi-menu .wifi-item .strength {
+    font-family: 'Segoe UI';
+    font-size: 14px;
+}
+
+.wifi-menu .wifi-item .controls-container {
+    padding-top: 8px;
+}
+
+.wifi-menu .wifi-item .connect {
+    background-color: var(--white-15);
+    padding: 4px 30px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+}
+
+.wifi-menu .wifi-item .connect:hover {
+    background-color: var(--white-1);
+}
+
+.wifi-menu .wifi-item .connect:pressed {
+    background-color: var(--white-03);
+}
+
+.wifi-menu .footer {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 12px;
+    margin-top: 2px;
+    color: var(--overlay2);
+    background-color: var(--crust-6);
+    border-top: 1px solid var(--white-1);
+}
+
+.wifi-menu .footer .settings-button {
+    font-family: 'Segoe UI';
+    background-color: transparent;
+    border: none;
+    padding: 0 2px;
+    min-width: 26px;
+    min-height: 26px;
+    color: var(--white);
+}
+
+.wifi-menu .footer .refresh-icon {
+    font-family: 'Segoe Fluent Icons';
+    background-color: transparent;
+    border: none;
+    min-width: 26px;
+    min-height: 26px;
+    color: var(--white);
+}
+
+.wifi-menu .footer .refresh-icon:hover {
+    background-color: var(--white-1);
+    border-radius: 4px;
+}
