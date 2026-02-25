@@ -128,7 +128,7 @@ widgets:
     type: "yasb.wallpapers.WallpapersWidget"
     options:
       label: "<span>\uf03e</span>"
-      image_path: "F:\\Github\\Get-Winfig\\winfig-wallpaper\\images"
+      image_path: "C:\\Windows\\Web\\Wallpaper\\winfig-wallpaper\\images"
       change_automatically: true
       update_interval: 90
       gallery:

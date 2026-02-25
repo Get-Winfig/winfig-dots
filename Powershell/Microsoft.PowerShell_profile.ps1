@@ -42,3 +42,10 @@ if (Get-Command onefetch -ErrorAction SilentlyContinue) {
 if (Get-Command fastfetch -ErrorAction SilentlyContinue) {
     fastfetch
 }
+
+# Load PSCompletions Mosule
+try {
+    Import-Module PSCompletions -Force -ErrorAction Stop
+} catch {
+    Write-Host "PSCompletions failed to load. Install it with: Install-Module PSCompletions -Scope CurrentUser" -ForegroundColor Red
+}

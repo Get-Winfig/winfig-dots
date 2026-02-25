@@ -32,7 +32,7 @@ function server {
     process {
         # If Service is not provided, prompt with fzf
         if ([string]::IsNullOrWhiteSpace($Service)) {
-            $Service = $services.Keys | fzf --height=30% --prompt="Select service to start: " --header="Use ↑/↓ to select, <Enter> to confirm" --reverse --border
+            $Service = $services.Keys | fzf --height=30% --prompt="Select service to start: " --header="Use  / to select, <Enter> to confirm" --reverse --border
             if ([string]::IsNullOrWhiteSpace($Service)) {
                 Write-Host "No service selected. Exiting."
                 return

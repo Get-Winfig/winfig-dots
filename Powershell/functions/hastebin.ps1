@@ -11,7 +11,7 @@ function hastebin {
     )
     # If no file path provided, use fzf to select one interactively
     if (-not $FilePath) {
-        $fzfCmd = 'fzf --prompt="   Select file to upload: " --border --reverse --header="Use ↑/↓ to select, <Enter> to confirm" --pointer="➤" --color="bg+:#1e1e2e,bg:#181825,spinner:#f5c2e7,hl:#f38ba8,fg:#cdd6f4,header:#89b4fa,info:#f9e2af,pointer:#a6e3a1,marker:#f5c2e7,fg+:#cdd6f4,prompt:#89b4fa,hl+:#f38ba8" --preview "bat --style=numbers --color=always {}"'
+        $fzfCmd = 'fzf --prompt="   Select file to upload: " --border --reverse --header="Use / to select, <Enter> to confirm" --pointer="➤" --color="bg+:#1e1e2e,bg:#181825,spinner:#f5c2e7,hl:#f38ba8,fg:#cdd6f4,header:#89b4fa,info:#f9e2af,pointer:#a6e3a1,marker:#f5c2e7,fg+:#cdd6f4,prompt:#89b4fa,hl+:#f38ba8" --preview "bat --style=numbers --color=always {}"'
         $FilePath = (Get-ChildItem -File | Select-Object -ExpandProperty Name | Out-String).Trim() | cmd /c $fzfCmd
         if (-not $FilePath) {
             Write-Host "No file selected." -ForegroundColor Yellow
